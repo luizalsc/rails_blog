@@ -1,0 +1,20 @@
+<div id="<%= dom_id post %>" class="card bg-light mb-3">
+  <div class="card-body">
+    <h4>
+      <%= link_to post.title, post, class: 'text-decoration-none' %>
+    </h4>
+
+    <em>Por <%= post.author %> (<%= l post.created_at, format: :short %>)</em>
+
+    <p><%= post.body.truncate(200) %></p>
+
+    <p class="text-muted"><%= pluralize post.comments.count, 'Comentário' %></p>
+    
+    <div class="d-flex">
+      <%#= link_to "Ler artigo", post, class: 'btn btn-primary m-1' %>
+      <%#= link_to "Editar", edit_post_path(post), class: 'btn btn-secondary m-1' %>
+      <%= link_to "Apagar", post, data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?'}, class: 'btn btn-danger m-1' %>
+      <%#= button_to 'Test', post_path(post), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } %>
+    </div>
+  </div>
+</div>
