@@ -75,3 +75,7 @@ group :test do
 end
 
 gem 'rails-i18n'
+
+gem 'pry'
+
+gem 'friendly_id'
