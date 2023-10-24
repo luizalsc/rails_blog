@@ -14,7 +14,6 @@
       <%= link_to "Ler artigo", post, class: 'btn btn-primary m-1' %>
       <%= link_to "Editar", edit_post_path(post), class: 'btn btn-secondary m-1' %>
       <%= link_to "Apagar", post, data: { turbo_method: :delete, turbo_confirm: 'Tem certeza?'}, class: 'btn btn-danger m-1' %>
-      <%#= button_to 'Test', post_path(post), method: :delete, form: { data: { turbo_confirm: 'Are you sure?' } } %>
     </div>
   </div>
 </div>
