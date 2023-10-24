@@ -13,7 +13,7 @@
   <body>
     <div class="bg-primary text-white mb-4 p-4 text-center">
       <%= link_to root_path, class: 'text-white text-decoration-none' do %>
-        <h1 class'display-4'>Blog da Blogaira</h1>
+        <h1 class='display-4'>Blog da Blogaira</h1>
       <% end %>
       <p class="lead">
         Um blog de blogueiragens de blogairas
@@ -27,7 +27,21 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       <% end %>
-      
+
+      <div class="row">
+        <div class="col-4 offset-8">
+          <div class="search">
+            <%= form_with url: search_posts_path, method: :get, local: true, class: 'form-inline' do |form| %>
+              <div class="form-group mx-3 mb-3 d-flex align-items-center">
+                <%= form.search_field :q, class: 'form-control mx-2', required: true, placeholder: 'Busca', value: params[:q] %>
+                <%= form.submit 'Buscar', class: 'btn btn-outline-primary btn-sm', data: {disable_with: 'Buscando...'} %>
+              </div>
+              
+            <% end %>
+          </div>
+        </div>
+      </div>
+
       <%= yield %>
     </div>
 
